@@ -1,0 +1,8 @@
+FROM registry.access.redhat.com/ubi9/python-312:latest
+
+COPY requirements.txt ./requirements.txt
+RUN pip3 --no-cache-dir install -r requirements.txt
+COPY . .
+
+EXPOSE 8501
+ENTRYPOINT ["streamlit", "run", "example.py", "--server.port=8501", "--server.address=0.0.0.0"]
