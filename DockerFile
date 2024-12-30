@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/python-311:latest
+FROM registry.access.redhat.com/ubi9/python-311:latest
 
 COPY requirements.txt ./requirements.txt
 RUN pip3 --no-cache-dir install -r requirements.txt
